@@ -1,0 +1,84 @@
+.projects h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.projects-sub {
+  opacity: 0.7;
+  margin-bottom: 50px;
+}
+
+.projects-sub span {
+  color: #b983ff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(185,131,255,0.4);
+}
+
+.project-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+}
+
+.project-overlay h3 {
+  margin-bottom: 6px;
+}
+
+.project-overlay p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-links a {
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.5);
+  transition: 0.3s ease;
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.project-links a:hover {
+  background: linear-gradient(135deg, #7f7cff, #b983ff);
+  border-color: transparent;
+}

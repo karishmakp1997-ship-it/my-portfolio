@@ -1,0 +1,31 @@
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.about-card {
+  max-width: 900px;
+  padding: 60px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+.about-card h2 {
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+
+.about-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.about-card span {
+  color: #b983ff;
+  font-weight: 500;
+}

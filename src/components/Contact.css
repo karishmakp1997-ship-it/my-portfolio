@@ -1,0 +1,37 @@
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  opacity: 0.7;
+  margin-bottom: 40px;
+}
+
+.contact-card {
+  display: inline-block;
+  padding: 36px 60px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 25px 60px rgba(127,124,255,0.45);
+}
+
+.contact-card span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.contact-card h4 {
+  margin-top: 8px;
+  font-weight: 500;
+}

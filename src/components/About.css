@@ -1,31 +1,205 @@
+/* ── Section ── */
 .about {
   display: flex;
   justify-content: center;
+  padding: 100px 20px;
 }
 
-.about-card {
-  max-width: 900px;
-  padding: 60px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+.about-container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
 }
 
-.about-card h2 {
-  font-size: 34px;
-  margin-bottom: 24px;
-}
-
-.about-card p {
-  font-size: 15px;
-  line-height: 1.8;
+.about-label {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #b983ff;
   opacity: 0.8;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
-.about-card span {
+.about-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.about-title span {
+  background: linear-gradient(90deg, #7f7cff, #b983ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Two-column grid ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  text-align: left;
+  align-items: start;
+}
+
+/* ── Left: Text ── */
+.about-text p {
+  font-size: 15.5px;
+  line-height: 1.85;
+  opacity: 0.75;
+  margin-bottom: 18px;
+  color: #e0e0e0;
+}
+
+.about-text strong {
+  color: #fff;
+  opacity: 1;
+}
+
+.about-text span {
   color: #b983ff;
   font-weight: 500;
+}
+
+/* Tech Tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.tech-tag {
+  background: rgba(127, 124, 255, 0.1);
+  border: 1px solid rgba(185, 131, 255, 0.3);
+  color: #c9a9ff;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.tech-tag:hover {
+  background: rgba(185, 131, 255, 0.2);
+  border-color: rgba(185, 131, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ── Right: Stats ── */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.stat-card:hover {
+  background: rgba(185, 131, 255, 0.1);
+  border-color: rgba(185, 131, 255, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(185, 131, 255, 0.15);
+}
+
+.stat-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stat-card h3 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #b983ff;
+  margin: 0 0 6px;
+}
+
+.stat-card p {
+  font-size: 12.5px;
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* ── Currently Learning Badge ── */
+.learning-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(185, 131, 255, 0.25);
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.learning-badge strong {
+  color: #b983ff;
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  70%  { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-right {
+    order: -1;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .about-container {
+    text-align: center;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-title {
+    font-size: 32px;
+  }
 }

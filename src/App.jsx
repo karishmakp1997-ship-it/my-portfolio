@@ -4,17 +4,21 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import ButterflyEffects from "./components/ButterflyEffects";
 
 function App() {
   return (
-    <>
+    <div className="app">
+      <ButterflyEffects />
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-    </>
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+    </div>
   );
 }
 

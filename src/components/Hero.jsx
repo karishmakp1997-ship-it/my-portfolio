@@ -84,8 +84,8 @@ export default function Hero() {
             </Link>
 
             <a
-              href="/Karishma_Resume.pdf"
-              download="Karishma_Priya_Resume.pdf"
+              href="/Karishmacv.pdf"
+              download="Karishmacv.pdf"
               className="btn-resume"
             >
               ⬇ Download Resume

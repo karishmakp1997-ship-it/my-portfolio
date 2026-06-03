@@ -3,65 +3,66 @@ import "./Projects.css";
 
 const projects = [
   {
-    title: "Coffee Shop Website",
+    title: "Glowify – Cosmetic Store",
+    tech: ["Python", "Django", "HTML", "CSS"],
+    category: "Backend",
+    description: "Full stack cosmetic e-commerce site with product listing, banner management, and dynamic pages built with Django templates.",
+    live: "https://cosmetic-fekk.onrender.com/",
+    github: "https://github.com/karishmakp1997-ship-it/cosmetic",
+    color: "#fd79a8",
+    icon: "💄",
+  },
+  {
+    title: "Vetrimart – E-Commerce Store",
+    tech: ["Python", "Django", "HTML", "CSS"],
+    category: "Backend",
+    description: "Full stack e-commerce platform with product management, cart, orders, blog and newsletter built with Django.",
+    live: "https://vetrimart-r4zx.onrender.com/",
+    github: "https://github.com/karishmakp1997-ship-it/vetrimart",
+    color: "#00b894",
+    icon: "🛒",
+  },
+  {
+    title: "Petloosa – Pet Shop",
     tech: ["React.js", "HTML", "CSS"],
     category: "React",
-    description: "Responsive coffee shop app with reusable React components, product listing, and modern UI design.",
-    live: "https://coffeeshop-ivory.vercel.app/",
-    github: "https://github.com/karishmakp1997-ship-it/coffeeshop",
-    color: "#7f7cff",
-    icon: "☕",
+    description: "Responsive pet shop website with product showcase, pet categories, and modern UI built with React.js.",
+    live: "https://pet-shop-one-gamma.vercel.app/",
+    github: "https://github.com/karishmakp1997-ship-it/pet-shop",
+    color: "#a29bfe",
+    icon: "🐾",
   },
   {
-    title: "Blink-It Clone",
+    title: "Baby Zone – Baby Products",
     tech: ["HTML", "CSS", "JavaScript"],
     category: "JavaScript",
-    description: "Functional Blinkit UI clone with dynamic text effects, smooth transitions, and interactive DOM manipulation.",
-    live: "https://blinks-two.vercel.app/",
-    github: "https://github.com/karishmakp1997-ship-it",
-    color: "#f7c948",
-    icon: "⚡",
+    description: "Responsive baby products website with product showcase, clean UI and smooth navigation.",
+    live: "https://karishmakp1997-ship-it.github.io/baby-website/index.html",
+    github: "https://github.com/karishmakp1997-ship-it/baby-website",
+    color: "#74b9ff",
+    icon: "👶",
   },
   {
-    title: "Tourist Page Booking",
+    title: "HandBag Store",
     tech: ["HTML", "CSS", "JavaScript"],
     category: "JavaScript",
-    description: "Tourism destination booking page with interactive UI elements, destination cards, and booking flow.",
-    live: "https://tourist-red.vercel.app/",
+    description: "Stylish handbag e-commerce website with product showcase and elegant UI design.",
+    live: "https://handbag-website.vercel.app/",
     github: "https://github.com/karishmakp1997-ship-it",
-    color: "#4ecdc4",
-    icon: "✈️",
+    color: "#fd79a8",
+    icon: "👜",
   },
   {
-    title: "Fit Oasis – Gym Website",
+    title: "ThemeMarket",
     tech: ["HTML", "CSS", "JavaScript"],
     category: "JavaScript",
-    description: "Interactive gym services site with membership plans, trainer profiles, and responsive Flexbox/Grid layout.",
-    live: "#",
-    github: "https://github.com/karishmakp1997-ship-it",
-    color: "#ff6b6b",
-    icon: "💪",
+    description: "Theme marketplace website with clean layout and smooth browsing experience.",
+    live: "https://karishmakp1997-ship-it.github.io/Market-themee/",
+    github: "https://github.com/karishmakp1997-ship-it/Market-themee",
+    color: "#fdcb6e",
+    icon: "🎨",
   },
-  {
-    title: "REST API – Task Manager",
-    tech: ["Node.js", "Express", "MongoDB"],
-    category: "Backend",
-    description: "Full CRUD REST API for task management with JWT authentication, route protection, and MongoDB integration.",
-    live: "#",
-    github: "https://github.com/karishmakp1997-ship-it",
-    color: "#68a063",
-    icon: "🗂️",
-  },
-  {
-    title: "Portfolio Website",
-    tech: ["React.js", "CSS", "Vercel"],
-    category: "React",
-    description: "Personal developer portfolio with smooth scroll, typing animation, project showcase, and contact section.",
-    live: "https://my-portfolio-silk-six-23.vercel.app/",
-    github: "https://github.com/karishmakp1997-ship-it",
-    color: "#b983ff",
-    icon: "🚀",
-  },
+
 ];
 
 const filters = ["All", "React", "JavaScript", "Backend"];
@@ -77,14 +78,12 @@ export default function Projects() {
     <section className="projects" id="projects">
       <div className="projects-container">
 
-        {/* Header */}
         <p className="projects-label">What I've Built</p>
         <h2 className="projects-title">Selected <span>Projects</span></h2>
         <p className="projects-sub">
-          Showcasing top projects from <span>50+ completed works</span>
+          Showcasing top 5 projects from <span>30+ completed works</span>
         </p>
 
-        {/* Filter Tabs */}
         <div className="filter-tabs">
           {filters.map((f) => (
             <button
@@ -97,12 +96,9 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Grid */}
         <div className="projects-grid">
           {filtered.map((project, index) => (
             <div key={index} className="project-card">
-
-              {/* Top color bar + icon */}
               <div className="card-header" style={{ background: `${project.color}18`, borderBottom: `1px solid ${project.color}33` }}>
                 <span className="card-icon">{project.icon}</span>
                 <div className="card-tech-pills">
@@ -114,13 +110,11 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Body */}
               <div className="card-body">
                 <h3 className="card-title">{project.title}</h3>
                 <p className="card-desc">{project.description}</p>
               </div>
 
-              {/* Links */}
               <div className="card-footer">
                 <a
                   href={project.live}
@@ -141,15 +135,13 @@ export default function Projects() {
                 </a>
               </div>
 
-              {/* Hover glow */}
               <div className="card-glow" style={{ background: `radial-gradient(circle at center, ${project.color}22, transparent 70%)` }} />
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
         <div className="projects-cta">
-          <p>Want to see more?</p>
+          <p>Want to see all 30+ projects?</p>
           <a
             href="https://github.com/karishmakp1997-ship-it"
             target="_blank"

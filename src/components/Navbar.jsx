@@ -26,7 +26,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
 
       {/* Logo */}
-      <h2 className="logo">Karishma<span>.</span></h2>
+      <h2 className="logo">Karishma <span> Priya</span></h2>
 
       {/* Desktop Nav */}
       <ul className="nav-links">

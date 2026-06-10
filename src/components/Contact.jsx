@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Contact.css";
 
 const socials = [
@@ -28,6 +28,25 @@ const socials = [
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
+  const revealRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealRefs.current.forEach((el) => { if (el) observer.observe(el); });
+    return () => observer.disconnect();
+  }, []);
+
+  const addRef = (el, i) => { revealRefs.current[i] = el; };
 
   const handleCopy = () => {
     navigator.clipboard.writeText("karishmakp1997@gmail.com");
@@ -40,21 +59,25 @@ export default function Contact() {
       <div className="contact-container">
 
         {/* Header */}
-        <p className="contact-label">Let's Talk</p>
-        <h2 className="contact-title">Get In <span>Touch</span></h2>
-        <p className="contact-sub">
+        <p className="contact-label reveal-item" ref={(el) => addRef(el, 0)} style={{ "--delay": "0s" }}>
+          Let's Talk
+        </p>
+        <h2 className="contact-title reveal-item" ref={(el) => addRef(el, 1)} style={{ "--delay": "0.1s" }}>
+          Get In <span>Touch</span>
+        </h2>
+        <p className="contact-sub reveal-item" ref={(el) => addRef(el, 2)} style={{ "--delay": "0.2s" }}>
           Open to full-time roles, internships, and freelance projects.
           <br />Feel free to reach out — I'd love to connect! 😊
         </p>
 
         {/* Availability badge */}
-        <div className="availability-badge">
+        <div className="availability-badge reveal-item" ref={(el) => addRef(el, 3)} style={{ "--delay": "0.3s" }}>
           <span className="avail-dot" />
           Available for opportunities — Looking for Full Stack Developer roles
         </div>
 
         {/* Email card */}
-        <div className="email-card" onClick={handleCopy}>
+        <div className="email-card reveal-item" ref={(el) => addRef(el, 4)} style={{ "--delay": "0.4s" }} onClick={handleCopy}>
           <div className="email-icon">✉️</div>
           <div className="email-info">
             <span className="email-label">Email me at</span>
@@ -67,13 +90,15 @@ export default function Contact() {
 
         {/* Social links */}
         <div className="socials-grid">
-          {socials.map((s) => (
+          {socials.map((s, i) => (
             <a
               key={s.label}
               href={s.href}
               target="_blank"
               rel="noreferrer"
-              className="social-card"
+              className="social-card reveal-item"
+              ref={(el) => addRef(el, 5 + i)}
+              style={{ "--delay": `${0.4 + i * 0.1}s` }}
             >
               <div className="social-icon-wrap">
                 {s.icon ? (
@@ -92,7 +117,7 @@ export default function Contact() {
         </div>
 
         {/* Footer note */}
-        <p className="contact-footer">
+        <p className="contact-footer reveal-item" ref={(el) => addRef(el, 8)} style={{ "--delay": "0.5s" }}>
           Built with ⚛️ React.js &nbsp;•&nbsp; Deployed on 🚀 Vercel
         </p>
 

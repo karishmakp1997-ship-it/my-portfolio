@@ -241,3 +241,15 @@
     text-align: left;
   }
 }
+
+/* ── Scroll Reveal ── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease var(--delay, 0s),
+              transform 0.6s ease var(--delay, 0s);
+}
+.reveal-item.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -43,6 +43,11 @@ export default function Skills() {
   const current = skillCategories.find((c) => c.category === activeTab);
 
   useEffect(() => {
+    // Reset all refs first
+    revealRefs.current.forEach((el) => {
+      if (el) el.classList.remove("reveal-visible");
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -52,11 +57,25 @@ export default function Skills() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
+
     revealRefs.current.forEach((el) => { if (el) observer.observe(el); });
-    return () => observer.disconnect();
-  }, []);
+
+    // Force reveal for elements already in viewport
+    const timer = setTimeout(() => {
+      revealRefs.current.forEach((el) => {
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add("reveal-visible");
+          }
+        }
+      });
+    }, 50);
+
+    return () => { observer.disconnect(); clearTimeout(timer); };
+  }, [activeTab]); // re-run on every tab change
 
   const addRef = (el, i) => { revealRefs.current[i] = el; };
 

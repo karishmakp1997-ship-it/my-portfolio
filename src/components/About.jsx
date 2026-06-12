@@ -4,8 +4,8 @@ import "./About.css";
 const highlights = [
   { icon: "💻", count: "50+", label: "Projects Built" },
   { icon: "⚛️", count: "5+",  label: "Tech Stacks" },
-  { icon: "🏢", count: "2",   label: "Internships" },
-  { icon: "📅", count: "9+",  label: "Months Experience" },
+  { icon: "🏢", count: "3+",   label: "Months Internships" },
+  { icon: "📅", count: "10",  label: "Months Experience" },
 ];
 
 const techTags = [
@@ -110,7 +110,7 @@ export default function About() {
               style={{ "--delay": "0.6s" }}
             >
               <span className="pulse-dot" />
-              <span>Currently mastering: <strong>DSA & System Design</strong></span>
+              <span>Currently Exploring: <strong>DSA & REST API Best Practices</strong></span>
             </div>
           </div>
 

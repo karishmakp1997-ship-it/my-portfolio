@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
-import profileImg from "../assets/pro2.jpeg";
 import "./Hero.css";
 
 const roles = [
@@ -196,7 +195,7 @@ export default function Hero() {
           <div className="sparkle sparkle-2">✦</div>
 
           <img
-            src={profileImg}
+            src="/profile.png"
             alt="Karishma Priya"
             className={`profile-img ${hovered ? "hovered" : ""}`}
             onMouseEnter={() => {

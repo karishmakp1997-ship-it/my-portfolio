@@ -136,7 +136,7 @@ export default function Hero() {
           {/* Stats */}
           <div className="hero-stats">
             <div className="stat-item">
-              <h2>50+</h2>
+              <h2>10+</h2>
               <span>Projects Built</span>
             </div>
             <div className="stat-divider" />
@@ -154,8 +154,8 @@ export default function Hero() {
           {/* Buttons */}
           <div className="hero-buttons">
             <a
-              href="/Karishmacv.pdf"
-              download="Karishmacv.pdf"
+              href="/karishma_resume.pdf"
+              download="karishma_resume.pdf"
               className="btn-hire"
             >
               Download CV ↓

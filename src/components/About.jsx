@@ -2,16 +2,16 @@ import { useEffect, useRef } from "react";
 import "./About.css";
 
 const highlights = [
-  { icon: "💻", count: "50+", label: "Projects Built" },
+  { icon: "💻", count: "10+", label: "Projects Built" },
   { icon: "⚛️", count: "5+",  label: "Tech Stacks" },
-  { icon: "🏢", count: "3+",   label: "Months Internships" },
+  { icon: "🏢", count: "6+",   label: "Months Internships" },
   { icon: "📅", count: "10",  label: "Months Experience" },
 ];
 
 const techTags = [
-  "React.js", "Node.js", "JavaScript", "Python",
-  "Flask", "Django", "MongoDB", "MySQL",
-  "REST APIs", "Git & GitHub",
+  "React.js", "Node.js", "Nest.js", "JavaScript", "Python",
+  "Flask", "Django", "MongoDB", "MySQL", "postgresql",
+  "REST APIs", "Git & GitHub","Render",
 ];
 
 export default function About() {
@@ -68,7 +68,7 @@ export default function About() {
             </p>
             <p className="reveal-item" ref={(el) => addRef(el, 3)} style={{ "--delay": "0.3s" }}>
               I'm currently completing my <span>Full Stack Developer Course (Expected May 2026)</span>,
-              where I've built <span>50+ real-world projects</span> covering frontend, backend,
+              where I've built <span>10+ real-world projects</span> covering frontend, backend,
               databases, and API integrations. I've also completed internships in Full Stack
               Development and Digital Marketing.
             </p>

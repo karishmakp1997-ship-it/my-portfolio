@@ -2,6 +2,34 @@ import { useState, useEffect, useRef } from "react";
 import "./Projects.css";
 
 const projects = [
+  // ── CLIENT PROJECTS ──
+  {
+    title: "Vetri AI Coach – Govt Exam Prep Platform",
+    tech: ["React.js", "Django REST", "PostgreSQL"],
+    category: "Client",
+    client: true,
+    description: "Exam prep platform for Vetri IT Systems with exam discovery, eligibility checker, study materials, mock tests, performance tracking and a coach chatbot.",
+    live: "https://vetri-ai-coach.vercel.app/",
+    github: "", // client repo – private
+    color: "#6c5ce7",
+    icon: "🎓",
+    image: "/banner.jpg",
+  },
+  {
+    title: "Mount Dental Care – Clinic Website",
+    tech: ["Next.js", "Django REST", "3D Animation"],
+    category: "Client",
+    client: true,
+    inProgress: true,
+    description: "Complete redesign of a multispeciality dental clinic website with a modern, fully responsive UI covering services, about, testimonials and contact.",
+    live: "http://localhost:3000/", // TODO: replace with deployed link
+    github: "", // client repo – private
+    color: "#00cec9",
+    icon: "🦷",
+    image: "/doctor.jpg",
+  },
+
+  // ── PERSONAL / TRAINING PROJECTS ──
   {
     title: "Glowify – Cosmetic Store",
     tech: ["Python", "Django", "HTML", "CSS"],
@@ -70,7 +98,7 @@ const projects = [
   },
 ];
 
-const filters = ["All", "React", "JavaScript", "Backend"];
+const filters = ["All", "Client", "React", "JavaScript", "Backend"];
 
 export default function Projects() {
   const [active, setActive] = useState("All");
@@ -109,7 +137,7 @@ export default function Projects() {
           Selected <span>Projects</span>
         </h2>
         <p className="projects-sub reveal-item" ref={(el) => addRef(el, 2)} style={{ "--delay": "0.2s" }}>
-          Showcasing top projects from <span>30+ completed works</span>
+          Showcasing client work and top projects from <span>30+ completed works</span>
         </p>
 
         <div className="filter-tabs reveal-item" ref={(el) => addRef(el, 3)} style={{ "--delay": "0.3s" }}>
@@ -119,7 +147,7 @@ export default function Projects() {
               className={`filter-btn ${active === f ? "active" : ""}`}
               onClick={() => setActive(f)}
             >
-              {f}
+              {f === "Client" ? "💼 Client" : f}
             </button>
           ))}
         </div>
@@ -127,7 +155,7 @@ export default function Projects() {
         <div className="projects-grid">
           {filtered.map((project, index) => (
             <div
-              key={index}
+              key={project.title}
               className="flip-card reveal-item"
               ref={(el) => addRef(el, 4 + index)}
               style={{ "--delay": `${index * 0.1}s` }}
@@ -152,6 +180,12 @@ export default function Projects() {
                   </div>
 
                   <div className="card-body">
+                    {(project.client || project.inProgress) && (
+                      <div className="card-badges">
+                        {project.client && <span className="badge-client">💼 Client Project</span>}
+                        {project.inProgress && <span className="badge-progress">🚧 In Development</span>}
+                      </div>
+                    )}
                     <h3 className="card-title">{project.title}</h3>
                     <p className="card-desc">{project.description}</p>
                   </div>
@@ -196,7 +230,7 @@ export default function Projects() {
                     <span style={{ fontSize: "48px" }}>{project.icon}</span>
                   </div>
 
-                  {/* Buttons only — no title, no text */}
+                  {/* Buttons */}
                   <div className="back-overlay">
                     <a
                       href={project.live}
@@ -205,16 +239,22 @@ export default function Projects() {
                       className="back-btn"
                       style={{ background: project.color }}
                     >
-                      🔗 Click Me — Live Demo
+                      {project.inProgress ? "🚧 Preview (Deploying Soon)" : "🔗 Click Me — Live Demo"}
                     </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="back-btn-ghost"
-                    >
-                      GitHub →
-                    </a>
+                    {project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="back-btn-ghost"
+                      >
+                        GitHub →
+                      </a>
+                    ) : (
+                      <span className="back-btn-ghost back-btn-disabled">
+                        🔒 Private Client Repo
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -223,7 +263,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="projects-cta reveal-item" ref={(el) => addRef(el, 12)} style={{ "--delay": "0.2s" }}>
+        <div className="projects-cta reveal-item" ref={(el) => addRef(el, 4 + projects.length)} style={{ "--delay": "0.2s" }}>
           <p>Want to see all 30+ projects?</p>
           <a
             href="https://github.com/karishmakp1997-ship-it"

@@ -10,8 +10,8 @@ const highlights = [
 
 const techTags = [
   "React.js", "Node.js", "Nest.js", "JavaScript", "Python",
-  "Flask", "Django", "MongoDB", "MySQL", "postgresql",
-  "REST APIs", "Git & GitHub","Render",
+  "Flask", "Django", "MongoDB", "MySQL", "PostgreSQL",
+  "REST APIs", "Git & GitHub", "Render",
 ];
 
 export default function About() {
@@ -61,21 +61,28 @@ export default function About() {
           {/* ── Left: Text ── */}
           <div className="about-text">
             <p className="reveal-item" ref={(el) => addRef(el, 2)} style={{ "--delay": "0.2s" }}>
-              Hey! I'm <strong>Karishma Priya</strong>, an aspiring Full Stack Developer
-              based in <strong>Chennai, India</strong>. I'm passionate about turning ideas
-              into real, working web applications — from pixel-perfect frontends to
-              robust backend APIs.
+              Hey! I'm <strong>Karishma Priya</strong>, a Full Stack Developer
+              based in <strong>Chennai, India</strong>. I completed my Python
+              Full Stack Developer training and internship, and I currently work
+              as a <span>Junior Software Developer (Traineeship)</span>, building
+              and shipping full-stack features on live client projects with
+              React.js, Django REST Framework, and PostgreSQL.
             </p>
             <p className="reveal-item" ref={(el) => addRef(el, 3)} style={{ "--delay": "0.3s" }}>
-              I'm currently completing my <span>Full Stack Developer Course (Expected May 2026)</span>,
-              where I've built <span>10+ real-world projects</span> covering frontend, backend,
-              databases, and API integrations. I've also completed internships in Full Stack
-              Development and Digital Marketing.
+              Along the way I've built <span>10+ real-world projects</span> across
+              frontend, backend, databases, and API integrations — including
+              features powered by Generative AI. I'm learning something new about
+              AI almost every day, going beyond just using AI tools to actually
+              understanding how they work: <strong>LLMs, RAG pipelines, LangChain</strong>,
+              and how to build AI-powered features into production applications.
             </p>
             <p className="reveal-item" ref={(el) => addRef(el, 4)} style={{ "--delay": "0.4s" }}>
-              My focus is on writing <strong>clean, scalable code</strong> and building
-              applications that actually solve problems. I love learning new technologies
-              and I'm always working on something new.
+              What drives me is genuine curiosity — I love taking an idea and
+              turning it into something people can actually use. Whether it's a
+              clean React interface, a well-structured Django API, or an
+              AI-assisted feature, I care about writing{" "}
+              <strong>code that works and scales</strong>, and I'm always pushing
+              myself to pick up the next tool, framework, or technique.
             </p>
 
             {/* Tech tags */}
@@ -110,7 +117,7 @@ export default function About() {
               style={{ "--delay": "0.6s" }}
             >
               <span className="pulse-dot" />
-              <span>Currently Exploring: <strong>DSA & REST API Best Practices</strong></span>
+              <span>Currently Exploring: <strong>LLMs, RAG & LangChain</strong></span>
             </div>
           </div>
 
